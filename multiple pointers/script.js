@@ -70,3 +70,25 @@ const isPalindrome = (arr) => {
 };
 
 console.log(isPalindrome([1, 2, 3, 2, 1]));
+
+// // Problem: Given a sorted array of integers,
+// find two numbers such that they add up to a specific target.
+// //  Return the indices of the two numbers.
+
+const twoNum = (arr) => {
+  let i = 0;
+  let j = arr.length - 1;
+
+  while (i < j) {
+    let sum = arr[i] + arr[j];
+    if (sum === 9) {
+      return [arr[i], arr[j]];
+    } else if (sum > 9) {
+      j--;
+    } else {
+      i++;
+    }
+  }
+};
+
+console.log(twoNum([2, 7, 11, 15]));
