@@ -90,3 +90,39 @@ let validAnagrams = (str1, str2) => {
 };
 
 // console.log(validAnagrams("anagram", "nagaram"));
+
+// Frequency Counter - sameFrequency
+// Write a function called sameFrequency.
+// Given two positive integers, find out if the two
+// numbers have the same frequency of digits.
+
+// Your solution MUST have the following complexities:
+
+// Time: O(N)
+
+const sameFrequency = (num1, num2) => {
+  const splitNum1 = Array.from(String(num1), Number);
+  const splitNum2 = Array.from(String(num2), Number);
+
+  if (splitNum1.length !== splitNum2.length) return false;
+
+  let counter1 = {};
+  let counter2 = {};
+
+  for (const key of splitNum1) {
+    counter1[key] = (counter1[key] || 0) + 1;
+  }
+  for (const key of splitNum2) {
+    counter2[key] = (counter2[key] || 0) + 1;
+  }
+
+  for (const key in counter1) {
+    if (counter1[key] !== counter2[key]) return false;
+  }
+
+  return true;
+
+  
+};
+
+console.log(sameFrequency(22, 222));
