@@ -75,15 +75,15 @@ console.log(isPalindrome([1, 2, 3, 2, 1]));
 // find two numbers such that they add up to a specific target.
 // //  Return the indices of the two numbers.
 
-const twoNum = (arr) => {
+const twoSum = (arr, value) => {
   let i = 0;
   let j = arr.length - 1;
 
   while (i < j) {
     let sum = arr[i] + arr[j];
-    if (sum === 9) {
-      return [arr[i], arr[j]];
-    } else if (sum > 9) {
+    if (sum === value) {
+      return [i, j];
+    } else if (sum > value) {
       j--;
     } else {
       i++;
@@ -91,7 +91,7 @@ const twoNum = (arr) => {
   }
 };
 
-console.log(twoNum([2, 7, 11, 15]));
+console.log(twoSum([2, 7, 11, 15], 9));
 
 // Frequency Counter / Multiple Pointers -
 // // areThereDuplicates Implement a function called,
