@@ -61,3 +61,32 @@ const original = "hello";
 const reversed = reverse(original);
 
 console.log(`The reverse of ${original} is ${reversed}`);
+
+// Checking for balanced parentheses
+
+function isBalanced(expression) {
+  const stack = new Stack();
+
+  const lookup = {
+    "(": ")",
+    "[": "]",
+    "{": "}",
+  };
+
+  for (let char of expression) {
+    if (lookup[char]) {
+      stack.push(char);
+    } else if (Object.values(lookup).includes(char)) {
+      if (stack.isEmpty() || lookup[stack.pop()] !== char) {
+        return false;
+      }
+    }
+  }
+
+  return stack.isEmpty();
+}
+
+const expr1 = "{[()()]}";
+const expr2 = "{[(])}";
+console.log(isBalanced(expr1)); // Output: true
+console.log(isBalanced(expr2)); // Output: false
