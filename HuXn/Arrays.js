@@ -14,6 +14,7 @@ class CustomArray {
   }
 
   pop() {
+    if (this.length === 0) return undefined;
     delete this.data[this.length - 1];
     this.length--;
     return;
@@ -31,6 +32,21 @@ class CustomArray {
     delete this.data[this.length - 1];
     this.length--;
   }
+
+  deleteByIndex(index) {
+    if (this.length === 0) return undefined;
+
+    const specificElement = this.data[index];
+    delete this.data[index];
+    for (let i = index + 1; i < this.length; i++) {
+      this.data[i - 1] = this.data[i];
+    }
+
+    delete this.data[this.length - 1];
+    this.length--;
+
+    return specificElement;
+  }
 }
 
 const myArray = new CustomArray();
@@ -38,6 +54,12 @@ const myArray = new CustomArray();
 myArray.push("salad");
 myArray.push("fish");
 myArray.push("mango");
-myArray.shift();
+myArray.push("meat");
+myArray.push("bush");
+myArray.push("elephant");
+
+myArray.deleteByIndex(2);
 
 console.log(myArray);
+
+// reverse string
