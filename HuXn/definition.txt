@@ -1,0 +1,1 @@
+An algorithm is a set of instructions that tells a computer how to do something, or a step by step solution of a problem
