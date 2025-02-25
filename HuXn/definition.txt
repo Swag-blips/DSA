@@ -10,4 +10,8 @@ o(log n) -> grows logarithmimically with the size of the input(represented by n)
 
 
 Array
-A data strcutre is an ordered collection of elements that can be accessesd using a numerical index
+A data strcutre is an ordered collection of elements that can be accessesd using a numerical inde
+
+// creating a custom Array
+to dynamically add to an object its usually
+object[index] = value
