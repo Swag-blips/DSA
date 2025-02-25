@@ -15,9 +15,10 @@ class CustomArray {
 
   pop() {
     if (this.length === 0) return undefined;
+    const lastItem = this.data[this.length - 1];
     delete this.data[this.length - 1];
     this.length--;
-    return;
+    return lastItem;
   }
 
   shift() {
@@ -49,17 +50,35 @@ class CustomArray {
   }
 }
 
-const myArray = new CustomArray();
+// const myArray = new CustomArray();
 
-myArray.push("salad");
-myArray.push("fish");
-myArray.push("mango");
-myArray.push("meat");
-myArray.push("bush");
-myArray.push("elephant");
+// myArray.push("salad");
+// myArray.push("fish");
+// myArray.push("mango");
+// myArray.push("meat");
+// myArray.push("bush");
+// myArray.push("elephant");
 
-myArray.deleteByIndex(2);
+// myArray.deleteByIndex(2);
 
-console.log(myArray);
+// console.log(myArray);
 
 // reverse string
+
+const reverseString = (value) => {
+  const reversedArray = new CustomArray();
+  const convertedValue = value.split("");
+
+  let toBeReversed = "";
+  for (let i = 0; i < convertedValue.length; i++) {
+    reversedArray.push(convertedValue[i]);
+  }
+
+  for (let j = 0; j < value.length; j++) {
+    toBeReversed += reversedArray.pop();
+  }
+
+  console.log(toBeReversed);
+};
+
+reverseString("Kai cenat");
