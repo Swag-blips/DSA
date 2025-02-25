@@ -2,3 +2,6 @@ An algorithm is a set of instructions that tells a computer how to do something,
 
 
 Big O
+o(n) -> linear time, algorithm grows as the input grows
+o(1) -> algorithm takes constant time irrespective of the input size
+o(n^2) -> grows quadratically as the input grows
