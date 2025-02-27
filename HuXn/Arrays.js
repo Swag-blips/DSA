@@ -127,8 +127,6 @@ const sentenceCapitalization = (value) => {
   console.log(capitalizedSentence);
 };
 
-sentenceCapitalization("hello from temu");
-
 const fizzBuzz = (n) => {
   for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
@@ -143,4 +141,29 @@ const fizzBuzz = (n) => {
   }
 };
 
-fizzBuzz(100);
+// Max profit
+
+const maxProfit = (prices) => {
+  let minPrice = prices[0];
+
+  let maxProfit = 0;
+
+  for (let i = 1; i < prices.length; i++) {
+    const currentPrice = prices[i];
+
+    //update miniomum price if the lower price is found
+
+    minPrice = Math.min(minPrice, currentPrice);
+
+    const potentialProfit = currentPrice - minPrice;
+
+    maxProfit = Math.max(maxProfit, potentialProfit);
+
+    console.log(maxProfit);
+  }
+  return maxProfit;
+};
+
+const prices = [7, 1, 5, 3, 6, 4];
+const profit = maxProfit(prices);
+console.log("Maximum profit:", profit);
