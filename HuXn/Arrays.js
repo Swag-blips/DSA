@@ -26,7 +26,7 @@ class CustomArray {
 
     const firstElement = this.data[0];
 
-    for (let i = 0; i < this.length; i++) {
+    for (let i = 1; i < this.length; i++) {
       this.data[i - 1] = this.data[i];
     }
 
@@ -81,4 +81,23 @@ const reverseString = (value) => {
   console.log(toBeReversed);
 };
 
-reverseString("Kai cenat");
+const isPalindrome = (value) => {
+  const reversedArray = new CustomArray();
+
+  const convertedValue = value.split("");
+
+  let toBeReversed = "";
+  for (let i = 0; i < convertedValue.length; i++) {
+    reversedArray.push(convertedValue[i]);
+  }
+
+  for (let j = 0; j < value.length; j++) {
+    toBeReversed += reversedArray.pop();
+  }
+
+  return toBeReversed === value;
+};
+
+console.log(isPalindrome("cddc"));
+console.log(isPalindrome("abba"));
+console.log(isPalindrome("Hello"));
