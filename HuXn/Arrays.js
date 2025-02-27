@@ -69,10 +69,10 @@ const reverseString = (value) => {
   const reversedArray = new CustomArray();
   const convertedValue = value.split("");
 
-  let toBeReversed = "";
-  for (let i = 0; i < convertedValue.length; i++) {
+  for (let i = 0; i < value.length; i++) {
     reversedArray.push(convertedValue[i]);
   }
+  let toBeReversed = "";
 
   for (let j = 0; j < value.length; j++) {
     toBeReversed += reversedArray.pop();
@@ -83,12 +83,10 @@ const reverseString = (value) => {
 
 const isPalindrome = (value) => {
   const reversedArray = new CustomArray();
-
-  const convertedValue = value.split("");
-
   let toBeReversed = "";
-  for (let i = 0; i < convertedValue.length; i++) {
-    reversedArray.push(convertedValue[i]);
+
+  for (let i = 0; i < value.length; i++) {
+    reversedArray.push(value[i]);
   }
 
   for (let j = 0; j < value.length; j++) {
@@ -118,3 +116,15 @@ const reverseInteger = (value) => {
 };
 
 reverseInteger(1234);
+
+const sentenceCapitalization = (value) => {
+  const sentenceArray = value.toLowerCase().split(" ");
+
+  const capitalizedSentence = sentenceArray
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(" ");
+
+  console.log(capitalizedSentence);
+};
+
+sentenceCapitalization("hello from temu");
