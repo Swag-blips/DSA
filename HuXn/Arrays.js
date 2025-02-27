@@ -98,6 +98,23 @@ const isPalindrome = (value) => {
   return toBeReversed === value;
 };
 
-console.log(isPalindrome("cddc"));
-console.log(isPalindrome("abba"));
-console.log(isPalindrome("Hello"));
+const reverseInteger = (value) => {
+  const reversedArray = new CustomArray();
+
+  const numberToString = value.toString();
+  const convertedValue = numberToString.split("");
+
+  let toBeReversed = "";
+
+  for (let i = 0; i < convertedValue.length; i++) {
+    reversedArray.push(convertedValue[i]);
+  }
+
+  for (let j = 0; j < convertedValue.length; j++) {
+    toBeReversed += reversedArray.pop();
+  }
+
+  console.log(Number(toBeReversed));
+};
+
+reverseInteger(1234);
