@@ -1,0 +1,14 @@
+{
+  "name": "dsa-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Data structures, algorithms, and coding problem practice in JavaScript.",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check-syntax.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
