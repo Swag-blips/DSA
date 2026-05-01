@@ -2,10 +2,10 @@ class MyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.length = 0;
+    this.length = 0; 
   }
 
-  /**
+  /**    
    * @param {number} index
    * @return {ListNode}
    */

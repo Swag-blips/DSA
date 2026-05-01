@@ -4,7 +4,7 @@ function bucketSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     count[arr[i]] += 1;
   }
-
+ 
   let i = 0;
  
   for (let n = 0; n < count.length; n++) {
