@@ -49,13 +49,13 @@ class StaticArray {
 
   removeMiddle(i) {
     for (let index = i + 1; index < this.length; index++) {
-      this.arr[index - 1] = this.arr[index];
+      this.arr[index - 1 ] = this.arr[index];
     }
     this.arr[this.length - 1] = 0;
     this.length--;
   }
 
-  // O(1) - remove from end
+  
   removeEnd() {
     if (this.length > 0) {
       this.arr[this.length - 1] = 0;
