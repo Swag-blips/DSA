@@ -27,6 +27,7 @@ function maxConsecutiveOnes(nums) {
   }
 
   console.log("final answer", prevTotalCount > count ? prevTotalCount : count);
+  
 }
 
 maxConsecutiveOnes([1]);
