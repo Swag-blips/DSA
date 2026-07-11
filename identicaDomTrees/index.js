@@ -10,6 +10,9 @@ function identicalDOMTrees(nodeA, nodeB) {
   return a.length === b.length && a.every((val, i) => val === b[i]);
 }
 
+
+
+
 const treeA = new DOMParser().parseFromString(
   `<div><span>Foo</span><p>Para</p></div>`,
   "text/html",
