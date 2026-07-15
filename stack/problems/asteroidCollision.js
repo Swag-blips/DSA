@@ -54,7 +54,7 @@ function asteroidCollision(asteroids) {
         stack.pop();
 
         stack.push(currentAsteroid);
-        console.log("index", stack.stack.indexOf(-5));
+   
         for (
           let j = stack.stack.indexOf(currentAsteroid) - 1;
           j < stack.stack.length;

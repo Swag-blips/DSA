@@ -36,7 +36,7 @@ function calculatePoints(operations) {
       let previousElement = stack.peek(1);
       let previousSecondElement = stack.peek(2);
 
-      console.log("previous element", previousElement, previousSecondElement);
+ 
 
       total = total + previousElement + previousSecondElement;
 
