@@ -56,6 +56,19 @@ class LinkedList {
 
     return null;
   }
+
+  removeFirst() {
+    const removedNode = this.head;
+
+    if (this.length === 0) {
+      return null;
+    }
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    }
+  }
 }
 
 class ListNode {
