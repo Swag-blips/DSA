@@ -57,17 +57,66 @@ class LinkedList {
     return null;
   }
 
-  removeFirst() {
-    const removedNode = this.head;
+  get(index) {
+    if (index >= this.length) {
+      return null;
+    }
 
-    if (this.length === 0) {
+    if (index < 0) {
+      return null;
+    }
+
+    let current = this.head;
+    let count = 0;
+    while (count < index) {
+      current = current.next;
+      count++;
+    }
+
+    return current;
+  }
+
+  removeLast() {
+    let removedNode = this.tail;
+    if (!this.head) {
       return null;
     }
 
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
+    } else {
+      let current = this.head;
+      while (current.next !== this.tail) {
+        current = current.next;
+      }
+
+      this.tail = current;
+      current.next = null;
     }
+
+    this.length--;
+    return removedNode;
+  }
+  removeFirst() {
+    const removedNode = this.head;
+
+    if (!this.head) {
+      return null;
+    }
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
+    }
+
+    this.length--;
+
+    removedNode.next = null;
+
+    return removedNode;
   }
 }
 
@@ -79,24 +128,10 @@ class ListNode {
 }
 const list = new LinkedList();
 
-// list.append("red");
-// list.append("green");
-// list.append("blue");
-// list.prepend("purple");
-list.prepend("orange");
+list.append("red");
+list.append("green");
+list.append("blue");
+list.append("purple");
+list.append("orange");
 
-console.log(list);
-
-// const node1 = new ListNode("red");
-// const node2 = new ListNode("blue");
-// const node3 = new ListNode("green");
-
-// node1.next = node2;
-// node2.next = node3;
-
-// let current = node1;
-
-// while (current) {
-//   console.log(current.value);
-//   current = current.next;
-// }
+console.log(list.get(3));
