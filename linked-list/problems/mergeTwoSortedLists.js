@@ -242,4 +242,6 @@ function mergeTwoList(list1, list2) {
   return list1;
 }
 
+
+
 console.log(mergeTwoList(list1.head, list2.head));
