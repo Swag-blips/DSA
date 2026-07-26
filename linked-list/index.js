@@ -83,7 +83,7 @@ class LinkedList {
     node.value = value;
 
     return true;
-  }
+  } 
   insert(index, value) {
     if (index < 0 || index > this.length) {
       return false;
