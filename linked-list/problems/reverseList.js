@@ -189,8 +189,7 @@ list1.append(7);
 // list1.append(50);
 // list1.append(3);
 
-function reverseLinkedList() {
-  let head = list1.head;
+function reverseLinkedList(head) {
   let node = null;
   let prev = null;
 
@@ -208,11 +207,6 @@ function reverseLinkedList() {
     prev.next = node;
     node = prev;
   }
-
-  console.dir(prev, {
-    depth: null,
-    colors: true,
-  });
 
   return prev;
 }
