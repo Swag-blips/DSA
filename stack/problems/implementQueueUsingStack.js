@@ -15,41 +15,53 @@ class Queue {
 
   pop() {
     const mainStack = this.mainStack;
+
     let finalValue;
 
-    for (let i = 0; i < mainStack.size(); i++) {
-      const value = this.mainStack.pop();
-      if (i === mainStack.size() - 1) {
+    while (mainStack.size()) {
+      const value = mainStack.pop();
+
+      if (mainStack.size() === 0) {
         finalValue = value;
-      } else {
-        this.altStack.push(value);
+        continue;
       }
+
+      this.altStack.push(value);
     }
 
-    const preservedAltStack = this.altStack;
-    this.mainStack = preservedAltStack;
-    this.altStack = new Stack();
+    while (this.altStack.size()) {
+      const value = this.altStack.pop();
+      this.mainStack.push(value);
+    }
+
     this.length--;
 
+
+    console.log(this.altStack, this.mainStack)
     return finalValue;
   }
 
   peek() {
     const mainStack = this.mainStack;
+
     let finalValue;
 
-    for (let i = 0; i < mainStack.size(); i++) {
-      const value = this.mainStack.pop();
-      if (i === mainStack.size() - 1) {
+    while (mainStack.size()) {
+      const value = mainStack.pop();
+
+      if (mainStack.size() === 0) {
         finalValue = value;
       }
+
       this.altStack.push(value);
     }
 
-    const preservedAltStack = this.altStack;
-    this.mainStack = preservedAltStack;
-    this.altStack = new Stack();
+    while (this.altStack.size()) {
+      const value = this.altStack.pop();
+      this.mainStack.push(value);
+    }
 
+    
     return finalValue;
   }
 
@@ -57,3 +69,12 @@ class Queue {
     return this.mainStack.size() === 0;
   }
 }
+
+const queue = new Queue();
+
+queue.push(1);
+queue.push(2);
+queue.push(3);
+queue.push(4);
+
+console.log(queue.pop(), queue.pop());
