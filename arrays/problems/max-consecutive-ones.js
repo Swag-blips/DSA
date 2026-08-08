@@ -8,7 +8,7 @@ function maxConsecutiveOnes(nums) {
       for (let j = i + 1; j < nums.length; j++) {
         if (nums[j] !== 1) {
           if (count > prevTotalCount) {
-            console.log("count at break", count);
+       
             prevTotalCount = count;
             count = 0;
           } else {
