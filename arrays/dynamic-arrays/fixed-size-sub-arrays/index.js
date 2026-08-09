@@ -1,5 +1,5 @@
-const arr = [2, 1, 5, 1, 3, 2];
-const k = 3;
+const arr = [2, 2,6];
+const k = 2;
 
 for (let start = 0; start <= arr.length - k; start++) {
   let subArray = [];
