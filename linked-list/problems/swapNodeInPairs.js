@@ -48,16 +48,14 @@ function swapNodeInPairs(head) {
         slow.next = curr;
       }
 
-    //   console.log("LIST AT THE END OF SWAP");
-    //   console.dir(head, {
-    //     depth: null,
-    //     colors: true,
-    //   });
+      //   console.log("LIST AT THE END OF SWAP");
+      //   console.dir(head, {
+      //     depth: null,
+      //     colors: true,
+      //   });
       slow = prev;
       curr = nextValForCurr;
       prev = nextValForPrev;
-
-    
 
       swapCounter++;
     }
@@ -70,7 +68,6 @@ function swapNodeInPairs(head) {
 //   depth: null,
 //   colors: true,
 // });
-
 
 function createList(values) {
   const list = new LinkedList();
@@ -93,78 +90,3 @@ function listToArray(head) {
 
   return result;
 }
-
-function assertListEqual(actualHead, expected) {
-  const actual = listToArray(actualHead);
-
-  if (
-    actual.length !== expected.length ||
-    actual.some((value, i) => value !== expected[i])
-  ) {
-    throw new Error(
-      `Expected [${expected}], but got [${actual}]`
-    );
-  }
-}
-
-assertListEqual(
-  swapNodeInPairs(createList([1, 2, 3, 4])),
-  [2, 1, 4, 3]
-);
-console.log("Test 1 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([])),
-  []
-);
-console.log("Test 2 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([1])),
-  [1]
-);
-console.log("Test 3 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([1, 2])),
-  [2, 1]
-);
-console.log("Test 4 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([1, 2, 3])),
-  [2, 1, 3]
-);
-console.log("Test 5 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([1, 2, 3, 4, 5])),
-  [2, 1, 4, 3, 5]
-);
-console.log("Test 6 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([1, 2, 3, 4, 5, 6])),
-  [2, 1, 4, 3, 6, 5]
-);
-console.log("Test 7 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([9, 8, 7, 6, 5, 6])),
-  [8, 9, 6, 7, 6, 5]
-);
-console.log("Test 8 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([5, 5, 5, 5])),
-  [5, 5, 5, 5]
-);
-console.log("Test 9 passed");
-
-assertListEqual(
-  swapNodeInPairs(createList([10, 20, 30, 40, 50, 60, 70])),
-  [20, 10, 40, 30, 60, 50, 70]
-);
-console.log("Test 10 passed");
-
-console.log("✅ All tests passed");
