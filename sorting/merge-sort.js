@@ -31,7 +31,7 @@ function merge(arr, l, m, r) {
   while (i < length1 && j < length2) {
     if (L[i] < R[j]) {
       arr[k] = L[i];
-      i++;
+      i++; 
     } else {
       arr[k] = R[j];
       j++;
@@ -39,7 +39,7 @@ function merge(arr, l, m, r) {
     k++;
   }
 
-  while (i < length1) {
+  while (i < length1) { 
     arr[k] = L[i];
     i++;
     k++;
@@ -48,8 +48,9 @@ function merge(arr, l, m, r) {
   while (j < length2) {
     arr[k] = R[j];
     j++;
-    k++;
+    k++; 
   }
-}
+} 
 
-console.log(mergeSort([2, 3, 4, 1, 6], 0, 4));
+console.log(mergeSort([2, 3, 4, 1, 6], 0, 4)); 
+   
