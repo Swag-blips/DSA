@@ -3,19 +3,19 @@ function mergeSort(arr, l, r) {
     let m = Math.floor((l + r) / 2);
     mergeSort(arr, l, m);
     mergeSort(arr, m + 1, r);
-    merge(arr, l, m, r);
+    merge(arr, l, m, r); 
   }
 
   return arr;
 }
-
+ 
 function merge(arr, l, m, r) {
   let length1 = m - l + 1;
-  let length2 = r - m;
-
+  let length2 = r - m;  
+ 
   let L = new Array(length1);
   let R = new Array(length2);
-
+ 
   for (let i = 0; i < length1; i++) {
     L[i] = arr[l + i];
   }

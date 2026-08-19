@@ -7,7 +7,7 @@ function quickSort(arr, startIndex, endIndex) {
   let left = startIndex;
 
   for (let i = left; i < endIndex; i++) {
-    if (arr[i] < pivot) {
+    if (arr[i] < pivot) { 
       let temp = arr[left];
 
       arr[left] = arr[i];
@@ -15,7 +15,7 @@ function quickSort(arr, startIndex, endIndex) {
       left++;
     }
   }
-
+ 
   arr[endIndex] = arr[left];
   arr[left] = pivot;
 
