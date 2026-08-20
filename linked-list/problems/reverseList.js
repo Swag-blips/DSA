@@ -22,8 +22,8 @@ function reverseLinkedList(head) {
       prev.next = null;
       continue;
     }
-
-    prev = head;
+ 
+    prev = head; 
     head = head.next;
     prev.next = node;
     node = prev;
