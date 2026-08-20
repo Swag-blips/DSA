@@ -54,7 +54,7 @@ function merge(arr, l, m, r) {
 
 if (require.main === module) {
   console.log(mergeSort([2, 3, 4, 1, 6], 0, 4));
-}
+} 
 
 module.exports = { mergeSort };
    

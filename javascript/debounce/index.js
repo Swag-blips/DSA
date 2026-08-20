@@ -5,7 +5,7 @@
  * }} DebouncedFunction
  */
 
-/**
+/** 
  * @param {Function} func
  * @param {number} [wait=0]
  * @return {DebouncedFunction}
@@ -40,7 +40,7 @@ function debounce(func, wait) {
   };
 
   return returnedDebounced;
-}
+} 
 
 if (typeof module !== "undefined") {
   module.exports = { debounce };
