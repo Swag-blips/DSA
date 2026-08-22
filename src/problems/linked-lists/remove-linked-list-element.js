@@ -1,3 +1,6 @@
+// To solve
+
+
 const { LinkedList, ListNode } = require("../../data-structures/linked-list");
 const list = new LinkedList();
 

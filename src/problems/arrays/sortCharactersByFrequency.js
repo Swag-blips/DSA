@@ -1,3 +1,5 @@
+// To review
+
 function frequencySort(string) {
   const strArr = string.split("");
 
@@ -14,6 +16,7 @@ function frequencySort(string) {
   const finalArr = Object.entries(freqCounter).sort((a, b) => b[1] - a[1]);
 
   let text = "";
+
   for (let i = 0; i < finalArr.length; i++) {
     let currentElement = finalArr[i];
 
@@ -24,5 +27,3 @@ function frequencySort(string) {
 
   return text;
 }
-
-console.log(frequencySort("cccaaa"));

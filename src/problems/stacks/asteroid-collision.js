@@ -19,7 +19,6 @@ function asteroidCollision(asteroids) {
         parsedCurrentAsteroid.split("").splice(1).join(""),
       );
 
-      
       if (absoluteValue === previousAsteroid) {
         stack.pop();
         continue;
@@ -29,7 +28,7 @@ function asteroidCollision(asteroids) {
         stack.pop();
 
         stack.push(currentAsteroid);
-   
+
         for (
           let j = stack.stack.indexOf(currentAsteroid) - 1;
           j < stack.stack.length;
