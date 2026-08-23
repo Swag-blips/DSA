@@ -97,7 +97,7 @@ class BST {
     if (val > root.val) {
       root.right = this.remove(root.right, val);
     } else if (val < root.val) {
-      root.left = this.remove(root.left, root.left);
+      root.left = this.remove(root.left, val);
     } else {
       if (root.right === null) {
         return root.left;
@@ -105,6 +105,12 @@ class BST {
       if (root.left === null) {
         return root.right;
       }
+
+      const minNode = this.minValueNode(root.right);
+
+      root.val = minNode.val;
+
+      root.right = this.remove(root.right, minNode.val);
     }
 
     return root;
