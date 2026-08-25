@@ -125,3 +125,7 @@ class BST {
     return curr;
   }
 }
+
+const binaryTree = new BST();
+
+module.exports = { BST, TreeNode };
