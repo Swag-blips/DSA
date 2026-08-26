@@ -1,3 +1,5 @@
+// TLE
+
 function maxConsecutiveOnes(nums) {
   let prevTotalCount = 0;
   let count = 0;
@@ -8,7 +10,6 @@ function maxConsecutiveOnes(nums) {
       for (let j = i + 1; j < nums.length; j++) {
         if (nums[j] !== 1) {
           if (count > prevTotalCount) {
-       
             prevTotalCount = count;
             count = 0;
           } else {
@@ -26,8 +27,7 @@ function maxConsecutiveOnes(nums) {
     }
   }
 
-  console.log("final answer", prevTotalCount > count ? prevTotalCount : count);
-  
+  return prevTotalCount > count ? prevTotalCount : count;
 }
 
 maxConsecutiveOnes([1]);
