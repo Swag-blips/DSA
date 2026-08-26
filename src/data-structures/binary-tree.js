@@ -128,4 +128,30 @@ class BST {
 
 const binaryTree = new BST();
 
+function inorderTraversal() {
+  const result = [];
+
+  function traverse(root) {
+    if (root === null) {
+      return;
+    }
+
+    traverse(root.left);
+    result.push(root.val);
+    traverse(root.right);
+  }
+
+  return result;
+}
+
+function preOrderTraversal(root) {
+  if (root === null) {
+    return;
+  }
+  console.log(root.val);
+  preOrderTraversal(root.left);
+  preOrderTraversal(root.right);
+}
+
+function postOrderTraversal(root) {}
 module.exports = { BST, TreeNode };

@@ -12,3 +12,4 @@ function insertIntoBST(root, val) {
 
   return root;
 }
+ 
