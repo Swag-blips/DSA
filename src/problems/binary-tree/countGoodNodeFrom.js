@@ -1,5 +1,13 @@
+function countGoodFromNode(root) {
+  const values = [];
 
+  function traverse(root) {
+    if (root === null) {
+      return;
+    }
 
-function countGoodFromNode(root){
-
+    traverse(root.left);
+    values.push(root.val);
+    traverse(root.right);
+  }
 }
