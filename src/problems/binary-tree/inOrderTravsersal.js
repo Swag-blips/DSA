@@ -6,3 +6,5 @@ function inorderTraversal(root) {
   numbers.push(root.val);
   inorderTraversal(root.right);
 }
+
+// return numbers
