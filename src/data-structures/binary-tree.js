@@ -126,8 +126,6 @@ class BST {
   }
 }
 
-const binaryTree = new BST();
-
 function inorderTraversal() {
   const result = [];
 
@@ -153,5 +151,56 @@ function preOrderTraversal(root) {
   preOrderTraversal(root.right);
 }
 
-function postOrderTraversal(root) {}
-module.exports = { BST, TreeNode };
+function postOrderTraversal(root) {
+  if (root === null) {
+    return;
+  }
+
+  preOrderTraversal(root.left);
+  preOrderTraversal(root.right);
+  console.log(root.val);
+}
+
+function levelOrderTraversal(root) {
+  const result = [];
+  const queue = [];
+
+  if (root !== null) {
+    queue.push(root);
+  }
+
+  while (queue.length > 0) {
+    const queueLength = queue.length;
+    const level = [];
+
+    for (let i = 0; i < queueLength; i++) {
+      const curr = queue.shift();
+
+      level.push(curr.val);
+
+      if (curr.left) {
+        queue.push(curr.left);
+      }
+
+      if (curr.right) {
+        queue.push(curr.right);
+      }
+      
+    }
+
+    result.push(level);
+  }
+
+  return result;
+}
+module.exports = { BST, TreeNode, levelOrderTraversal };
+
+if (require.main === module) {
+  const binaryTree = new BST();
+
+  for (const value of [4, 2, 7, 1, 3]) {
+    binaryTree.insert(value);
+  }
+
+  console.log(levelOrderTraversal(binaryTree.root));
+}
