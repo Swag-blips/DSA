@@ -169,6 +169,8 @@ function levelOrderTraversal(root) {
     queue.push(root);
   }
 
+  let depth = 0;
+
   while (queue.length > 0) {
     const queueLength = queue.length;
     const level = [];
@@ -185,13 +187,12 @@ function levelOrderTraversal(root) {
       if (curr.right) {
         queue.push(curr.right);
       }
-      
     }
-
+    depth++;
     result.push(level);
   }
 
-  return result;
+  return depth;
 }
 module.exports = { BST, TreeNode, levelOrderTraversal };
 
