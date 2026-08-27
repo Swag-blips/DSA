@@ -43,7 +43,7 @@ function quickSort(arr, startIndex, endIndex) {
   quickSort(arr, startIndex, left - 1);
   quickSort(arr, left + 1, endIndex);
 
-  return arr;
+  return arr; 
 }
 
 if (require.main === module) {
