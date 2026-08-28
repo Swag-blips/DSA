@@ -34,10 +34,9 @@ function largestValueInRow(root) {
       }
     }
 
-    if(max){
-largest.push(max);
+    if (typeof max === "number") {
+      largest.push(max);
     }
-    
   }
 
   return largest;
