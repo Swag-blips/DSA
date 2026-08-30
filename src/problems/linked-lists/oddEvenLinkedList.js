@@ -10,7 +10,7 @@ function oddEvenLinkedList(head) {
   let prev = head;
 
   let removedNodes = [];
-
+   
   while (curr) {
     let nextNode = curr.next;
     if (count % 2 === 0) {
