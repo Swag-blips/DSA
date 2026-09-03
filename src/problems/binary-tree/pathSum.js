@@ -1,7 +1,6 @@
 const { TreeNode } = require("../../data-structures/binary-tree");
 
 function pathSum(root, targetSum) {
-  let foundTargetSum = false;
   function travese(root, sum, targetSum) {
     if (root === null) {
       return 0;
@@ -9,16 +8,20 @@ function pathSum(root, targetSum) {
 
     if (root.left === null && root.right === null) {
       sum += root.val;
-      if (sum === targetSum) foundTargetSum = true;
+      if (sum === targetSum) return true;
     }
 
-    travese(root.left, sum + root.val, targetSum);
-    travese(root.right, sum + root.val, targetSum);
+    let left = travese(root.left, sum + root.val, targetSum);
+    let right = travese(root.right, sum + root.val, targetSum);
+
+    if (left || right) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  travese(root, 0, targetSum);
-
-  return foundTargetSum;
+  return travese(root, 0, targetSum);
 }
 
 if (require.main === module) {
