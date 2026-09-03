@@ -24,7 +24,7 @@ function isBalanced(root) {
 
   return balanced === -1 ? false : true;
 }
-
+ 
 if (require.main === module) {
   const root = new TreeNode(3);
   root.left = new TreeNode(9);
